@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <button id="svcGet">Get Quote using Svc</button><button id="wcfGet">Get Quote using WCF</button><br /><br />
+    <div id="quote"></div>
+    <script type="text/javascript" src="Scripts/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#svcGet").click(function () {
+                $.getJSON("api-svc/quotes/GetRandomQuoteOfTheDay", function (quote) {
+                    $("#quote").html(quote.data);
+                });
+            });
+
+            $("#wcfGet").click(function () {
+                $.get("api-wcf/quotes/random", function (quote) {
+                    $("#quote").html(quote);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
