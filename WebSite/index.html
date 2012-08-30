@@ -16,7 +16,7 @@
             });
 
             $("#wcfGet").click(function () {
-                $.get("api-wcf/quotes/random", function (quote) {
+                $.get("api-wcf/quotes/GetRandomQuoteOfTheDay", function (quote) {
                     $("#quote").html(quote);
                 });
             });

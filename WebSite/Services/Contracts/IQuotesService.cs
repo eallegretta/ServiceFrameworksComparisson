@@ -11,7 +11,7 @@ namespace WebSite.Services.Contracts
     public interface IQuotesService
     {
         [OperationContract]
-        [WebGet(UriTemplate = "/random", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        [WebGet(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         string GetRandomQuoteOfTheDay();
     }
 }
